@@ -17,6 +17,11 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ecf0f1;
         }
         nav {
             background: rgba(0, 0, 0, 0.5);
@@ -71,9 +76,23 @@
         button:hover {
             background: #8e44ad;
         }
+        .toggle-container {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+        }
+        .toggle-container label {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <div class="toggle-container">
+        <label>
+            <input type="checkbox" id="darkModeToggle">
+            Dark Mode
+        </label>
+    </div>
     <nav>
         <ul>
             <li><a href="#login">Login</a></li>
@@ -102,5 +121,11 @@
         <input type="text" placeholder="Enter your query here">
         <button>Search</button>
     </div>
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
