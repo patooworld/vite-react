@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Web Application</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Image Slideshow</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to My App</h1>
-  </header>
-  <main>
-    <p>This is the main content of my application.</p>
-    <button id="myButton">Click me</button>
-  </main>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="img1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img3.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
